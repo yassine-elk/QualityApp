@@ -3,13 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Quality - WPA</title>
-
 <script>
-window.location="https://quality.my-board.org/";
+document.addEventListener("deviceready", function () {
+
+    setTimeout(function () {
+
+        cordova.InAppBrowser.open(
+            "https://quality.my-board.org/",
+            "_blank",
+            "location=no,toolbar=no,zoom=no,fullscreen=yes"
+        );
+
+        document.getElementById("splash").style.display = "none";
+
+    }, 2000);
+
+});
 </script>
 
-</head>
-<body>
-Loading...
 </body>
 </html>

@@ -1,13 +1,70 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.myboard.quality" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+<widget
+    id="org.myboard.quality"
+    version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
     <name>Quality</name>
+
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        LEONI Quality Application
     </description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+
+    <author>
+        Quality Team
     </author>
+
+    <!-- Start local Cordova app -->
     <content src="index.html" />
+
+    <!-- Network access -->
+    <access origin="*" />
+
+    <!-- Allow Quality website inside app -->
+    <allow-navigation href="https://quality.my-board.org/*" />
+
+    <!-- External links -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <!-- App settings -->
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true" />
+
+    <preference
+        name="AndroidLaunchMode"
+        value="singleTask"
+    />
+
+    <preference
+        name="AndroidXEnabled"
+        value="true"
+    />
+
+    <!-- Android -->
+    <platform name="android">
+
+        <!-- App Icon -->
+        <icon src="res/icon/icon.png" />
+
+        <preference
+            name="AndroidWindowSplashScreenAnimatedIcon"
+            value="res/icon/icon.png"
+        />
+
+        <preference
+            name="AndroidWindowSplashScreenBackground"
+            value="#FFFFFF"
+        />
+
+        <preference
+            name="AndroidWindowSplashScreenAnimationDuration"
+            value="1000"
+        />
+
+    </platform>
+
 </widget>
