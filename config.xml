@@ -30,7 +30,7 @@
 
         <preference
             name="AndroidWindowSplashScreenAnimatedIcon"
-            value="res/icon/icon.png" />
+            value="res/splash/transparent.png" />
 
         <preference
             name="AndroidWindowSplashScreenBackground"
