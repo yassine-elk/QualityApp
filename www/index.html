@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width,
-        initial-scale=1.0,
-        maximum-scale=1.0,
-        user-scalable=no"
+        content="width=device-width, initial-scale=1.0,
+        maximum-scale=1.0, user-scalable=no"
     >
 
-    <title>Quality</title>
+    <title>LEONI Quality</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -29,256 +24,355 @@
             height: 100%;
             overflow: hidden;
             font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
+            background: #f8fcff;
         }
 
         #splash {
-
             position: fixed;
             inset: 0;
-
             z-index: 9999;
 
             display: flex;
             flex-direction: column;
-
             align-items: center;
             justify-content: center;
 
+            background: #f8fcff;
+
+            opacity: 0;
+            animation: splashFadeIn .8s ease forwards;
+        }
+
+        /* TOP BLUE DECORATION */
+
+        .top-wave {
+            position: absolute;
+            top: -85px;
+            left: -10%;
+            width: 120%;
+            height: 220px;
+
             background:
-                radial-gradient(
-                    circle at center,
-                    #ffffff 0%,
-                    #f5f9fd 50%,
-                    #e4eef8 100%
+                linear-gradient(
+                    135deg,
+                    #173e8e,
+                    #2776be,
+                    #38bce9
                 );
 
-            transition:
-                opacity .6s ease,
-                visibility .6s ease;
+            border-radius:
+                0 0 45% 55% /
+                0 0 55% 45%;
+
+            transform: rotate(-3deg);
         }
 
-        #splash.hide {
-            opacity: 0;
-            visibility: hidden;
+        .top-wave::after {
+            content: "";
+            position: absolute;
+
+            width: 180px;
+            height: 110px;
+
+            right: 40px;
+            bottom: -30px;
+
+            background: #f8fcff;
+
+            border-radius: 50%;
         }
 
-        .logo-container {
+        /* BOTTOM BLUE DECORATION */
 
-            animation:
-                logoEnter 1s ease forwards;
+        .bottom-wave {
+            position: absolute;
+            bottom: -100px;
+            left: -10%;
 
+            width: 120%;
+            height: 220px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #35bce9,
+                    #2472bb,
+                    #173d8e
+                );
+
+            border-radius:
+                50% 50% 0 0 /
+                45% 55% 0 0;
+
+            transform: rotate(3deg);
         }
 
-        .logo {
+        .bottom-wave::after {
+            content: "";
+            position: absolute;
 
-            width: 230px;
-            max-width: 70vw;
+            width: 190px;
+            height: 100px;
 
-            display: block;
+            left: 55px;
+            top: -25px;
 
+            background: #f8fcff;
+
+            border-radius: 50%;
         }
+
+        /* CONTENT */
+
+        .content {
+            position: relative;
+            z-index: 10;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transform: translateY(-20px);
+        }
+
+        .welcome {
+            font-family: cursive;
+            font-size: 43px;
+            font-weight: 300;
+
+            color: #172331;
+
+            margin-bottom: 5px;
+
+            animation: welcomeEnter 1.2s ease;
+        }
+
+        .leoni {
+            color: #28569d;
+
+            font-size: 62px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .loading-title {
+            margin-top: 90px;
+            margin-bottom: 8px;
+
+            color: #173c73;
+
+            font-size: 20px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        /* LOADING BAR */
 
         .loader {
+            width: 190px;
+            height: 45px;
 
-            position: relative;
+            padding: 5px;
 
-            width: 170px;
-            height: 3px;
-
-            margin-top: 40px;
+            border: 4px solid #173c73;
+            border-radius: 30px;
 
             overflow: hidden;
 
-            border-radius: 50px;
-
-            background:
-                rgba(0, 84, 156, .12);
-
+            background: white;
         }
 
-        .loader-bar {
-
-            position: absolute;
-
-            width: 45%;
+        .loader-inner {
+            width: 100%;
             height: 100%;
 
-            border-radius: 50px;
+            display: flex;
+            gap: 4px;
 
-            background: #00549c;
+            overflow: hidden;
 
-            animation:
-                loading 1.3s
-                ease-in-out
-                infinite;
-
+            border-radius: 20px;
         }
 
-        .loading-text {
+        .bar {
+            min-width: 15px;
+            height: 45px;
 
-            margin-top: 17px;
+            background: #164c91;
 
-            color: #6f7f8f;
+            transform: skewX(-22deg) translateY(-8px);
 
-            font-size: 10px;
-
-            font-weight: 600;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
+            animation: barLoading 1.4s ease-in-out infinite;
         }
+
+        .bar:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .bar:nth-child(3) {
+            animation-delay: .2s;
+        }
+
+        .bar:nth-child(4) {
+            animation-delay: .3s;
+        }
+
+        .bar:nth-child(5) {
+            animation-delay: .4s;
+        }
+
+        .bar:nth-child(6) {
+            animation-delay: .5s;
+        }
+
+        .bar:nth-child(7) {
+            animation-delay: .6s;
+        }
+
+        .bar:nth-child(8) {
+            animation-delay: .7s;
+        }
+
+        /* FOOTER */
 
         .footer {
-
             position: absolute;
 
             left: 0;
             right: 0;
+            bottom: 60px;
 
-            bottom: 25px;
-
-            color: #8191a1;
-
-            font-size: 10px;
-
-            letter-spacing: .5px;
+            z-index: 20;
 
             text-align: center;
 
+            color: #DDDDDD;
+
+            font-size: 19px;
         }
 
-        @keyframes logoEnter {
+        /* ANIMATIONS */
 
+        @keyframes splashFadeIn {
             from {
-
                 opacity: 0;
-
-                transform:
-                    translateY(15px)
-                    scale(.92);
-
             }
 
             to {
-
                 opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1);
-
             }
-
         }
 
-        @keyframes loading {
+        @keyframes welcomeEnter {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
 
-            0% {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-                left: -50%;
-
+        @keyframes barLoading {
+            0%,
+            100% {
+                background: #d8dee8;
             }
 
             50% {
-
-                left: 55%;
-
+                background: #164c91;
             }
-
-            100% {
-
-                left: 110%;
-
-            }
-
         }
 
+        #splash.hide {
+            animation: splashOut .5s ease forwards;
+        }
+
+        @keyframes splashOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
-
 <div id="splash">
 
+    <div class="top-wave"></div>
 
-    <div class="logo-container">
+    <div class="content">
 
-        <img
-            src="img/leoni-logo.svg"
-            class="logo"
-            alt="LEONI"
-        >
+        <div class="leoni">
+            LEONI
+        </div>
+        <br>
+        <div class="welcome">
+            Quality - WPA 
+        </div>
+
+        
+
+        <div class="loading-title">
+            LOADING......
+        </div>
+
+        <div class="loader">
+
+            <div class="loader-inner">
+
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </div>
+
+        </div>
 
     </div>
-
-
-    <div class="loader">
-
-        <div class="loader-bar"></div>
-
-    </div>
-
-
-    <div class="loading-text">
-
-        Loading Quality
-
-    </div>
-
 
     <div class="footer">
-
-        LEONI - Quality WPA - elkhayat.dev © 2026
-
+        Leoni - Quality WPA - elkhayat.dev © 2026
     </div>
 
+    <div class="bottom-wave"></div>
 
 </div>
 
-
 <script src="cordova.js"></script>
 
-
 <script>
+document.addEventListener("deviceready", function () {
 
-    document.addEventListener(
-        "deviceready",
-        function () {
+    setTimeout(function () {
 
-            setTimeout(function () {
+        const splash = document.getElementById("splash");
 
-                const splash =
-                    document.getElementById(
-                        "splash"
-                    );
+        splash.classList.add("hide");
 
-                splash.classList.add("hide");
+        setTimeout(function () {
 
+            window.location.replace(
+                "https://quality.my-board.org/"
+            );
 
-                setTimeout(function () {
+        }, 500);
 
-                    window.location.replace(
-                        "https://quality.my-board.org/"
-                    );
+    }, 2500);
 
-                }, 600);
-
-
-            }, 2000);
-
-        },
-        false
-    );
-
+}, false);
 </script>
 
-
 </body>
-
 </html>
