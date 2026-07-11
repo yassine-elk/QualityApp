@@ -6,7 +6,7 @@
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Quality</name>
+    <name>LEONI - Quality</name>
 
     <description>LEONI Quality Application</description>
 
@@ -18,7 +18,7 @@
 
     <allow-navigation href="https://quality.my-board.org/*" />
 
-    <preference name="Fullscreen" value="true" />
+    <preference name="Fullscreen" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="AndroidLaunchMode" value="singleTask" />
