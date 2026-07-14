@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "649681557518",
+    "project_id": "leoni-quality",
+    "storage_bucket": "leoni-quality.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649681557518:android:5eb1844b06f2ef3ea6445f",
+        "android_client_info": {
+          "package_name": "org.myboard.quality"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACgroUAM4cgaqekQSxBLwm7JDE5xmuKfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
